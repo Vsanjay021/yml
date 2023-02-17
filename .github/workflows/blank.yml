@@ -1,1 +1,31 @@
+# #yaml- yet another markup language
+# #array
 
+# array1:
+#   - data1
+#   - data2
+#   - data3
+
+# #objects:
+
+# address:
+#   street: Kadabagere cross
+#   city: Bengaluru
+#   state: Karnataka
+
+# #env variables
+#   value: ${{env.value}}
+#   variable: ${{github.VARIABLE_NAME}}
+
+
+name: Github action ofr
+on:
+  push:
+    branches: [master]
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Print node version
+          run: node --version
