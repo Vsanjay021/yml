@@ -18,15 +18,33 @@
 #   variable: ${{github.VARIABLE_NAME}}
 
 # printing node versions
-name: print node version
-on:
+
+name: Run ESLint 
+on: 
   push:
-    branches: [master]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-      - name: Print node version
-        run: node -v
+    branches: [master] 
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2 
+      - name: Install Node.js 
+        uses: actions/setup-node@v2 
+      - name: Install dependencies 
+        run: npm init @eslint/config
+      - name: Run ESLint 
+        run: npx eslint .
+
+# name: print node version
+# on:
+#   push:
+#     branches: [master]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Install Node.js
+#         uses: actions/setup-node@v2
+#       - name: Print node version
+#         run: node -v
