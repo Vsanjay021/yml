@@ -1,40 +1,5 @@
-# #yaml- yet another markup language
-# #array
-
-# array1:
-#   - data1
-#   - data2
-#   - data3
-
-# #objects:
-
-# address:
-#   street: Kadabagere cross
-#   city: Bengaluru
-#   state: Karnataka
-
-# #env variables
-#   value: ${{env.value}}
-#   variable: ${{github.VARIABLE_NAME}}
 
 # printing node versions
-
-name: Run ESLint 
-on: 
-  push:
-    branches: [master] 
-jobs: 
-  build: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - name: Checkout code
-        uses: actions/checkout@v2 
-      - name: Install Node.js 
-        uses: actions/setup-node@v2 
-      - name: Install dependencies 
-        run:  npm install eslint --save-dev
-      - name: Run ESLint 
-        run: npx eslint .
 
 # name: print node version
 # on:
@@ -48,3 +13,22 @@ jobs:
 #         uses: actions/setup-node@v2
 #       - name: Print node version
 #         run: node -v
+
+# Running ESLint
+
+# name: Run ESLint 
+# on: 
+#   push:
+#     branches: [master] 
+# jobs: 
+#   build: 
+#     runs-on: ubuntu-latest 
+#     steps: 
+#       - name: Checkout code
+#         uses: actions/checkout@v2 
+#       - name: Install Node.js 
+#         uses: actions/setup-node@v2 
+#       - name: Install dependencies 
+#         run:  npm install eslint --save-dev
+#       - name: Run ESLint 
+#         run: npx eslint .
